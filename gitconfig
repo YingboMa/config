@@ -1,0 +1,29 @@
+[user]
+    signingkey = FDC7B05D2C9932D5828CD91855AFF63A83797D10
+    email = mayingbo5@gmail.com
+    name = Yingbo Ma
+[alias]
+    st = status -sb
+    co = checkout
+    br = branch
+    cm = commit --verbose -S
+    me = merge -S
+    rb = rebase -S
+    lo = log --all --color --graph --pretty=format:'%Cred%h%Creset\
+    -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\
+    --abbrev-commit
+    lg = log --graph --oneline --decorate
+    aa = add -A
+    di = diff
+    ri = "!sh -c 't=\"${1:-master}\"; s=\"${2:-HEAD}\"; mb=\"$(git merge-base \"$t\" \"$s\")\"; if test \"x$mb\" = x ; then o=\"$t\"; else lm=\"$(git log -n1 --merges \"$t..$s\" --pretty=%H)\"; if test \"x$lm\" = x ; then o=\"$mb\"; else o=\"$lm\"; fi; fi; test $# -gt 0 && shift; test $# -gt 0 && shift; git rebase --interactive \"$o\" \"$@\"'"
+[core]
+    autocrlf = input
+    editor = nvim
+[diff]
+    tool = nvimdiff
+[merge]
+    tool = nvimdiff
+[difftool "nvimdiff"]
+    cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
+[difftool]
+    prompt = false

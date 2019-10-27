@@ -1,0 +1,71 @@
+#!/bin/sh
+
+set -eu
+
+G='\033[0;32m'
+NC='\033[0m'
+SCRIPT="$(readlink -f "$0")"
+SCRIPTPATH=`dirname "$SCRIPT"`
+
+read -p 'Do you want to backup packages list? {y/n} ' -i 'y' -e backup
+if [ "$backup" == 'y' ]; then
+    printf "${G}pacman -Qeq | grep -v \"\$(pacman -Qqm)\" > $SCRIPTPATH/installed.txt\n"
+    pacman -Qeq | grep -v "$(pacman -Qqm)" > "$SCRIPTPATH/installed.txt"
+    printf "pacman -Qqm > $SCRIPTPATH/aurinstalled.txt${NC}\n"
+    pacman -Qqm > "$SCRIPTPATH/aurinstalled.txt"
+fi
+
+read -p 'Do you want to sync packages? {y/n} ' -i 'n' -e init
+if [ "$init" == 'y' ]; then
+    sudo pacman -S --needed - < installed.txt
+fi
+
+# Color
+printf "${G}"
+
+declare -a dwms=("dwm" "dwmstatus")
+for i in "${dwms[@]}"
+do
+    make clean -C "$i"
+    make -C "$i"
+    make install -C "$i"
+done
+
+src=( $(awk '{print $1}' "$SCRIPTPATH/mapper") )
+dest=( $(awk '{print $2}' "$SCRIPTPATH/mapper") )
+dir=( $(awk '{print $3}' "$SCRIPTPATH/mapper" | sed '/^$/d') )
+
+#############################
+# Create config dirs
+#############################
+
+for i in "$dir"; do
+    mkdir -pv "$(eval echo $i)"
+done
+
+#############################
+# Create symlink
+#############################
+
+if [[ "${#src[@]}" != "${#dest[@]}" ]]; then
+    echo 'Fatal: Mismatch!'
+    exit 1
+else
+    for ((i = 0; i < "${#src[@]}"; ++i)); do
+        rm -rf "$(eval echo ${dest[$i]})"
+        DEST="$(eval echo ${dest[$i]})"
+        if [ -f "$DEST" ]; then
+            rm -rf "$DEST"
+        fi
+        ln -sv "$SCRIPTPATH/$(eval echo ${src[$i]})" "$DEST"
+    done
+fi
+
+printf "${NC}"
+
+NVIMPLUGFILE=~/.local/share/nvim/site/autoload/plug.vim
+if [ ! -e "$NVIMPLUGFILE" ]; then
+    curl -fLo "$NVIMPLUGFILE" --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+fi
+
+nvim +PlugInstall +qall
