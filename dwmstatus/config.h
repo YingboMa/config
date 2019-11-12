@@ -10,18 +10,21 @@
 #define LEFTSEPARATOR " "
 #define RIGHTSEPARATOR " "
 #define AUDIOFS "🔊 %ld%%"
-#define TIMEFS "%d/%m %H:%M"
-#define RAMFS "🧠 %.0fM"
+#define TIMEFS "📅 %a, %b %d  ⏰ %I:%M%P"
+#define RAMFS "💾 %.0fM"
 #define BRIGHTFS "🔆 %ld%%"
 #define TEMPFS "🌡 %.0lfC"
-#define CPUFS "💻%2.0f%%"
+#define CPUFS "🔥%2.0f%%"
 #define BATFS "🔋 %d%%%c"
 
 int (*const functab[])(char*, size_t) = {
-    sep_left, audio, sep_right, sep_left, brightness, sep_right,
-    sep_left, mem,   sep_right, sep_left, temp,       sep_right,
-    sep_left, cpu,   sep_right, sep_left, bat,        sep_right,
-    sep_left, date,  sep_left,
+    sep_left, audio,      sep_right,
+    sep_left, brightness, sep_right,
+    sep_left, mem,        sep_right,
+    sep_left, cpu,        sep_right,
+    sep_left, temp,       sep_right,
+    sep_left, bat,        sep_right,
+    sep_left, date,       sep_right,
 };
 
 int N_funcs = sizeof(functab) / sizeof(functab[0]);
