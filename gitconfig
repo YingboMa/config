@@ -1,7 +1,6 @@
 [user]
-    signingkey = FDC7B05D2C9932D5828CD91855AFF63A83797D10
-    email = mayingbo5@gmail.com
-    name = Yingbo Ma
+    email = shashigowda91@gmail.com
+    name = Shashi Gowda
 [alias]
     st = status -sb
     co = checkout

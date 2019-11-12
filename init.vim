@@ -165,8 +165,6 @@ autocmd FileType gitcommit,markdown,text,html,tex setlocal spell complete+=kspel
 " Julia
 let g:default_julia_version = "devel"
 autocmd BufRead,BufNewFile $HOME/.julia/*/*DiffEq*/* setlocal ts=2 sw=2
-autocmd BufRead,BufNewFile $HOME/.julia/*/PuMaS/* setlocal ts=2 sw=2
-autocmd BufRead,BufNewFile $HOME/.julia/*/DiffEqGPU/* setlocal ts=4 sw=4
 " LaTeX
 let g:tex_flavor='latex'
 let g:vimtex_view_method='zathura'
