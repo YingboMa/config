@@ -18,6 +18,7 @@
 #define BATFS "🔋 %d%%%c"
 
 int (*const functab[])(char*, size_t) = {
+    sep_left, weather, //    sep_right, -- already seems to append a space.
     sep_left, audio,      sep_right,
     sep_left, brightness, sep_right,
     sep_left, mem,        sep_right,

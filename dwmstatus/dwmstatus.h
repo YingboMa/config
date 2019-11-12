@@ -25,6 +25,7 @@ int date(char*, size_t);
 int mem(char*, size_t);
 int brightness(char*, size_t);
 int temp(char*, size_t);
+int weather(char* ptr, size_t size);
 int cpu(char*, size_t);
 int bat(char*, size_t);
 int sep_left(char*, size_t);
