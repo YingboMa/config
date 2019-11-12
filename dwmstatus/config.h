@@ -10,7 +10,7 @@
 #define LEFTSEPARATOR " "
 #define RIGHTSEPARATOR " "
 #define AUDIOFS "🔊 %ld%%"
-#define TIMEFS "📅 %a, %b %d  ⏰ %I:%M%P"
+#define TIMEFS "📅 %a, %d %b  ⏰ %I:%M%P"
 #define RAMFS "💾 %.0fM"
 #define BRIGHTFS "🔆 %ld%%"
 #define TEMPFS "🌡 %.0lfC"
