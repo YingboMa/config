@@ -22,8 +22,6 @@ filetype plugin indent on
 " Basic settings
 set number lazyredraw mouse=a so=5
 " Movements
-vmap < <gv
-vmap > >gv
 map <esc> :noh<cr>
 nnoremap ; :
 " Python setup
@@ -67,11 +65,6 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 " Gotta run fast!
 noremap H ^
 noremap L g_
-noremap J 5j
-noremap K 5k
-" {} is not useful anyway, ƪ(•̃͡ε•̃͡)∫ ƪ(•̃͡ε•̃͡)∫ ƪ(•̃͡ε•̃͡)∫
-nnoremap { J
-nnoremap } K
 " History
 set undofile undodir=~/.vim/undo/ undolevels=1000 undoreload=10000
 " FZF
