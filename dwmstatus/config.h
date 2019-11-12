@@ -7,7 +7,7 @@
 
 #define LEFTSEPARATOR " ["
 #define RIGHTSEPARATOR "] "
-#define AUDIOFS "Vol  %ld%%"
+#define AUDIOFS "🔊 %ld%%"
 #define TIMEFS "%m-%d %H:%M:%S"
 #define RAMFS "RAM %.2fM"
 #define BRIGHTFS "Brightness %ld%%"

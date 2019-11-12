@@ -1,5 +1,7 @@
 " Plugins
 call plug#begin('~/.vim/plugged')
+    " Tmux
+    Plug 'christoomey/vim-tmux-navigator'
     " File
     Plug 'airblade/vim-gitgutter'
     Plug 'tpope/vim-fugitive'
@@ -49,7 +51,6 @@ set tabstop=4 shiftwidth=4 expandtab
 set virtualedit=
 set wildmenu
 "set colorcolumn=100
-set nowrap linebreak
 set wildmode=full
 set notimeout
 " leader is ,
