@@ -1,0 +1,9 @@
+#!/bin/bash
+
+CACHEFILE=/tmp/wttr
+
+if [ -e $CACHEFILE ] && [ `stat --format=%Y $CACHEFILE` -ge $(( `date +%s` - 180 )) ]; then
+    cat $CACHEFILE
+else
+    curl -s https://wttr.in/?format=%c+%t\&metric | tee $CACHEFILE
+fi

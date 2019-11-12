@@ -29,7 +29,7 @@ int audio(char* ptr, size_t size) {
 int weather(char* ptr, size_t size) {
   char str[20];
   int len = 0;
-  FILE* wttr = popen("curl https://wttr.in/?format=%c+%t\\&metric", "r");
+  FILE* wttr = popen("wttr", "r");
   if (wttr == NULL) {
       fprintf(stderr, "error curling wttr.in");
   } else {
