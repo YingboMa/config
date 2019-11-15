@@ -10,7 +10,11 @@ SCRIPTPATH=`dirname "$SCRIPT"`
 read -p 'Do you want to backup packages list? {y/n} ' -i 'y' -e backup
 if [ "$backup" == 'y' ]; then
     printf "${G}pacman -Qeq | grep -v \"\$(pacman -Qqm)\" > $SCRIPTPATH/installed.txt\n"
-    pacman -Qeq | grep -v "$(pacman -Qqm)" > "$SCRIPTPATH/installed.txt"
+    if [ ! -n `(pacman -Qqm)` ]; then
+        pacman -Qeq | grep -v "$(pacman -Qqm)" > "$SCRIPTPATH/installed.txt"
+    else
+        pacman -Qeq > "$SCRIPTPATH/installed.txt"
+    fi
     printf "pacman -Qqm > $SCRIPTPATH/aurinstalled.txt${NC}\n"
     pacman -Qqm > "$SCRIPTPATH/aurinstalled.txt"
 fi
