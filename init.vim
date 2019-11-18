@@ -214,3 +214,6 @@ let g:solarized_diffmode = "high"
 let g:solarized_termtrans = 1
 colorscheme solarized8
 set laststatus=0
+
+" Timestamp notes
+map <F8> :put =strftime('%a %Y-%m-%d %H:%M ')<CR>j
