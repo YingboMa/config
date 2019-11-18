@@ -1,0 +1,7 @@
+#!/usr/bin/bash
+if [ -n $1 ]; then
+    DISP=HDMI1
+else
+    DISP=$1
+fi
+xrandr --output $DISP --auto --above eDVI

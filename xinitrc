@@ -1,7 +1,7 @@
 #!/bin/sh
 xrandr --setprovideroutputsource modesetting NVIDIA-0
 xrandr --auto
-xrandr --dpi 96
+xrandr --dpi 128
 
 export _JAVA_AWT_WM_NONREPARENTING=1
 
@@ -24,16 +24,11 @@ fi
 
 xautolock -time 10 -locker slock &
 
-export XMODIFIERS=@im=fcitx
-export GTK_IM_MODULE=fcitx
-export QT_IM_MODULE=fcitx
-
 xset b 0
-xset r rate 150 70
+xset r rate 250 40
 
 dwmstatus &
 dunst &
-fcitx &
 parcellite &
 
 while true; do

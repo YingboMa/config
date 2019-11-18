@@ -1,5 +1,5 @@
 init.vim            $HOME/.config/nvim/init.vim                 $HOME/.config/nvim
-dunstrc             $HOME/.config/dunst/dunstrc                 $HOME/.config/dunstrc
+dunstrc             $HOME/.config/dunst/dunstrc                 $HOME/.config/dunst
 config.rasi         $HOME/.config/rofi/config.rasi              $HOME/.config/rofi
 kitty.conf          $HOME/.config/kitty/kitty.conf              $HOME/.config/kitty
 zathurarc           $HOME/.config/zathura/zathurarc             $HOME/.config/zathurarc
@@ -12,3 +12,5 @@ xinitrc             $HOME/.xinitrc
 clang-format        $HOME/.clang-format
 wakebar             $HOME/.local/bin/wakebar                     $HOME/.local/bin
 gitconvert          $HOME/.local/bin/gitconvert                  $HOME/.local/bin
+disp                $HOME/.local/bin/disp                        $HOME/.local/bin
+wttr                $HOME/.local/bin/wttr                        $HOME/.local/bin

@@ -26,6 +26,20 @@ int audio(char* ptr, size_t size) {
   }
 }
 
+int weather(char* ptr, size_t size) {
+  char str[20];
+  int len = 0;
+  FILE* wttr = popen("wttr", "r");
+  if (wttr == NULL) {
+      fprintf(stderr, "error curling wttr.in");
+  } else {
+      fgets(str, 20, wttr);
+      len = snprintf(ptr, size, "%s", str);
+  }
+  pclose(wttr);
+  return len;
+}
+
 int date(char* ptr, size_t size) {
   time_t now = time(0);
   return strftime(ptr, size, TIMEFS, localtime(&now));

@@ -1,6 +1,7 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 #PATH=$HOME/local/bin:$HOME/.cargo/bin:$PATH
+PATH=$HOME/.local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
   export ZSH=$HOME/.oh-my-zsh
@@ -77,6 +78,7 @@ alias j='$HOME/julia-1.3.0-rc4/bin/julia -q'
 # Misc
 alias sv='sudoedit'
 alias v='nvim'
+alias vi='nvim'
 alias r='ranger'
 alias ls='exa'
 alias ll='exa -la --git'
