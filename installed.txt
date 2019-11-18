@@ -89,6 +89,7 @@ powertop
 python-pynvim
 ranger
 reiserfsprogs
+rlwrap
 rofi
 rsync
 sc-im
@@ -97,6 +98,7 @@ scrot
 slock
 sshfs
 sudo
+syncthing
 sysprof
 system-config-printer
 tali
@@ -115,6 +117,7 @@ tlp
 tlp-rdw
 tmux
 tor
+tp_smapi
 ttf-croscore
 ttf-dejavu
 ttf-fira-code
