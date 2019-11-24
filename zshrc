@@ -70,9 +70,47 @@ export FZF_DEFAULT_COMMAND='
 [ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
 [ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
 
+export BROWSER="google-chrome-stable"
+
 # Julia
 #export JULIA_REVISE=manual
-alias j='$HOME/julia-1.3.0-rc4/bin/julia -q'
+
+export JULIA_PATH="$HOME/build/julia/usr"
+export LLVM_PATH="$JULIA_PATH/tools"
+#export PATH="$LLVM_PATH:$PATH"
+
+export JL="$JULIA_PATH/bin/julia"
+alias j="$JL -q"
+export OPT="$LLVM_PATH/opt"
+
+export OPTFLAGS="-load=$JULIA_PATH/lib/libjulia.so"
+
+export JLPASSES="-tbaa -PropagateJuliaAddrspaces -simplifycfg -dce -sroa -memcpyopt -always-inline -AllocOpt \
+          -instcombine -simplifycfg -sroa -instcombine -jump-threading -instcombine -reassociate \
+          -early-cse -AllocOpt -loop-idiom -loop-rotate -LowerSIMDLoop -licm -loop-unswitch \
+          -instcombine -indvars -loop-deletion -loop-unroll -AllocOpt -sroa -instcombine -gvn \
+          -memcpyopt -sccp -sink -instsimplify -instcombine -jump-threading -dse -AllocOpt \
+          -simplifycfg -loop-idiom -loop-deletion -jump-threading -slp-vectorizer -adce \
+          -instcombine -loop-vectorize -instcombine -barrier -LowerExcHandlers \
+          -GCInvariantVerifier -LateLowerGCFrame -dce -LowerPTLS -simplifycfg -CombineMulAdd"
+
+#set -x JLPASSES_UNTIL_LV -tbaa -PropagateJuliaAddrspaces -simplifycfg -dce -sroa -memcpyopt -always-inline -AllocOpt \
+#          -instcombine -simplifycfg -sroa -instcombine -jump-threading -instcombine -reassociate \
+#          -early-cse -AllocOpt -loop-idiom -loop-rotate -LowerSIMDLoop -licm \
+#          #-loop-unswitch \
+#          -instcombine -indvars -loop-deletion -loop-unroll -AllocOpt -sroa -instcombine -gvn \
+#          -memcpyopt -sccp -sink -instsimplify -instcombine -jump-threading -dse -AllocOpt \
+#          -simplifycfg -loop-idiom -loop-deletion -jump-threading -slp-vectorizer -adce \
+#          -instcombine
+#
+#set -x JLPASSES_NOSLP_NOROTATE -tbaa -PropagateJuliaAddrspaces -simplifycfg -dce -sroa -memcpyopt -always-inline -AllocOpt \
+#          -instcombine -simplifycfg -sroa -instcombine -jump-threading -instcombine -reassociate \
+#          -early-cse -AllocOpt -loop-idiom -LowerSIMDLoop -licm -loop-unswitch \
+#          -instcombine -indvars -loop-deletion -loop-unroll -AllocOpt -sroa -instcombine -gvn \
+#          -memcpyopt -sccp -sink -instsimplify -instcombine -jump-threading -dse -AllocOpt \
+#          -simplifycfg -loop-idiom -loop-deletion -jump-threading -adce \
+#          -instcombine -loop-vectorize -instcombine -barrier -LowerExcHandlers \
+#          -GCInvariantVerifier -LateLowerGCFrame -dce -LowerPTLS -simplifycfg -CombineMulAdd
 
 # Misc
 alias sv='sudoedit'

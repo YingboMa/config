@@ -1,6 +1,7 @@
 " Plugins
 call plug#begin('~/.vim/plugged')
     " File
+    Plug 'scrooloose/nerdtree'
     Plug 'airblade/vim-gitgutter'
     Plug 'tpope/vim-fugitive'
     Plug '/usr/bin/fzf'
@@ -73,6 +74,8 @@ nnoremap { J
 nnoremap } K
 " History
 set undofile undodir=~/.vim/undo/ undolevels=1000 undoreload=10000
+" nerdtree
+map <leader>t :NERDTreeToggle<CR>
 " FZF
 nnoremap <leader>b :Buffers<CR>
 command! -bang -nargs=* GGrep
@@ -92,29 +95,6 @@ imap <c-x><c-f> <plug>(fzf-complete-path)
 imap <c-x><c-j> <plug>(fzf-complete-file-ag)
 imap <c-x><c-l> <plug>(fzf-complete-line)
 imap <c-x><c-x> <plug>(fzf-maps-i)
-"let $FZF_DEFAULT_COMMAND =  "find * -path '*/\.*' -prune -o -path 'node_modules/**' -prune -o -path 'target/**' -prune -o -path 'dist/**' -prune -o  -type f -print -o -type l -print 2> /dev/null"
-"let $FZF_DEFAULT_OPTS=' --color=dark --color=fg:15,bg:-1,hl:1,fg+:#ffffff,bg+:0,hl+:1 --color=info:0,prompt:0,pointer:12,marker:4,spinner:11,header:-1 --layout=reverse  --margin=1,4'
-"let g:fzf_layout = { 'window': 'call FloatingFZF()' }
-"function! FloatingFZF()
-"  let buf = nvim_create_buf(v:false, v:true)
-"  call setbufvar(buf, '&signcolumn', 'no')
-"
-"  let height = float2nr(20)
-"  let width = float2nr(80)
-"  let horizontal = float2nr((&columns - width) / 2)
-"  let vertical = float2nr((&lines-line('$') - height) / 2)
-"
-"  let opts = {
-"        \ 'relative': 'editor',
-"        \ 'row': vertical,
-"        \ 'col': horizontal,
-"        \ 'width': width,
-"        \ 'height': height,
-"        \ 'style': 'minimal'
-"        \ }
-"
-"  call nvim_open_win(buf, v:true, opts)
-"endfunction
 " Leader
 nnoremap <leader>s :split<CR>
 nnoremap <leader>v :vsplit<CR>
@@ -161,11 +141,11 @@ autocmd BufNewFile,BufRead *.jmd set filetype=markdown
 autocmd BufNewFile,BufRead *.jl nnoremap <leader>B :let @+ = 'breakpoint(' . join(['"' . expand('%:p') . '"',  line(".")], ',') . ')' <CR>
 autocmd BufNewFile,BufRead *.tex,*.bib setlocal ts=2 sw=2
 autocmd FileType gitcommit,markdown,text,html,tex setlocal spell complete+=kspell tw=80
-"set colorcolumn=80 " and give me a colored column
+set colorcolumn=80 " and give me a colored column
 " Julia
 let g:default_julia_version = "devel"
 autocmd BufRead,BufNewFile $HOME/.julia/*/*DiffEq*/* setlocal ts=2 sw=2
-autocmd BufRead,BufNewFile $HOME/.julia/*/PuMaS/* setlocal ts=2 sw=2
+autocmd BufRead,BufNewFile $HOME/.julia/*/Pumas/* setlocal ts=2 sw=2
 autocmd BufRead,BufNewFile $HOME/.julia/*/DiffEqGPU/* setlocal ts=4 sw=4
 " LaTeX
 let g:tex_flavor='latex'
@@ -206,11 +186,11 @@ set timeoutlen=400
 autocmd InsertLeave * call Fcitx2en()
 "autocmd InsertEnter * call Fcitx2zh()
 " Git
-nmap ]h <Plug>GitGutterNextHunk
-nmap [h <Plug>GitGutterPrevHunk
-nmap <leader>hs <Plug>GitGutterStageHunk
-nmap <leader>hu <Plug>GitGutterUndoHunk
-nmap <leader>hp <Plug>GitGutterPreviewHunk
+nmap ]h <Plug>(GitGutterNextHunk)
+nmap [h <Plug>(GitGutterPrevHunk)
+nmap <leader>hs <Plug>(GitGutterStageHunk)
+nmap <leader>hu <Plug>(GitGutterUndoHunk)
+nmap <leader>hp <Plug>(GitGutterPreviewHunk)
 " Theme
 set termguicolors
 syntax on

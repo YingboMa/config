@@ -99,8 +99,8 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-	{ 0,                            XF86MonBrightnessDown,     spawn,          SHCMD("xbacklight -inc 5 ; wakebar") },
-	{ 0,                            XF86MonBrightnessUp,       spawn,          SHCMD("xbacklight -dec 5 ; wakebar") },
+	{ 0,                            XF86MonBrightnessDown,     spawn,          SHCMD("xbacklight -dec 5 ; wakebar") },
+	{ 0,                            XF86MonBrightnessUp,       spawn,          SHCMD("xbacklight -inc 5 ; wakebar") },
 	{ 0,                            XF86AudioMute,             spawn,          SHCMD("amixer -q sset Master toggle ; wakebar") },
 	{ 0,                            XF86AudioRaiseVolume,      spawn,          SHCMD("amixer -q sset Master 5%+ ; wakebar") },
 	{ 0,                            XF86AudioLowerVolume,      spawn,          SHCMD("amixer -q sset Master 5%- ; wakebar") },
