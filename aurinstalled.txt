@@ -1,1 +1,6 @@
+escrotum-git
+geteltorito
+mutt-wizard-git
 slack-desktop
+urlview
+visual-studio-code-insiders

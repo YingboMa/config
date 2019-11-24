@@ -1,3 +1,4 @@
+abook
 accerciser
 acpi
 acpi_call-dkms
@@ -22,9 +23,9 @@ ccache
 cheese
 cloc
 cmake
-compton
 cpanminus
 cpupower
+cronie
 cuda
 cups
 cups-pdf
@@ -38,6 +39,7 @@ downgrade
 dunst
 dwarffortress
 eigen
+emacs
 entr
 eog
 ethtool
@@ -54,6 +56,7 @@ fcitx-rime
 fcitx-sogoupinyin
 feh
 file-roller
+firefox
 fish
 five-or-more
 flex
@@ -156,14 +159,15 @@ lib32-nvidia-utils
 lib32-virtualgl
 lightsoff
 linux
+linux-ck-skylake
+linux-ck-skylake-headers
 linux-firmware
 linux-headers
 linux-lts
 linux-lts-headers
-linux-zen
-linux-zen-headers
 lld
 lldb
+llvm
 logrotate
 lvm2
 make
@@ -212,6 +216,7 @@ orca
 parcellite
 pdf2svg
 perf
+picom
 polari
 polybar
 powertop
@@ -229,6 +234,7 @@ ranger
 reiserfsprogs
 ripgrep
 rofi
+rstudio-desktop-bin
 rsync
 rygel
 s-nail
