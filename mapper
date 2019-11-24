@@ -14,3 +14,4 @@ wakebar             $HOME/.local/bin/wakebar                     $HOME/.local/bi
 gitconvert          $HOME/.local/bin/gitconvert                  $HOME/.local/bin
 disp                $HOME/.local/bin/disp                        $HOME/.local/bin
 wttr                $HOME/.local/bin/wttr                        $HOME/.local/bin
+emacs.el            $HOME/.emacs.el
