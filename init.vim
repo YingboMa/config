@@ -154,7 +154,7 @@ autocmd BufNewFile,BufRead *.mmark set filetype=markdown
 autocmd BufNewFile,BufRead *.jmd set filetype=markdown
 autocmd BufNewFile,BufRead *.jl nnoremap <leader>B :let @+ = 'breakpoint(' . join(['"' . expand('%:p') . '"',  line(".")], ',') . ')' <CR>
 autocmd BufNewFile,BufRead *.tex,*.bib setlocal ts=2 sw=2
-autocmd FileType gitcommit,markdown,text,html,tex setlocal spell complete+=kspell tw=80
+"autocmd FileType gitcommit,markdown,text,html,tex setlocal spell complete+=kspell tw=80
 "set colorcolumn=80 " and give me a colored column
 " Julia
 let g:default_julia_version = "devel"
