@@ -4,6 +4,7 @@ config.rasi         $HOME/.config/rofi/config.rasi              $HOME/.config/ro
 kitty.conf          $HOME/.config/kitty/kitty.conf              $HOME/.config/kitty
 zathurarc           $HOME/.config/zathura/zathurarc             $HOME/.config/zathurarc
 gitconfig           $HOME/.gitconfig
+gitattributes       $HOME/.gitattributes_global
 zprofile            $HOME/.zprofile
 zshrc               $HOME/.zshrc
 tmux.conf           $HOME/.tmux.conf

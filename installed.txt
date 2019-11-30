@@ -51,6 +51,7 @@ inetutils
 intel-ucode
 jfsutils
 jpegoptim
+jq
 julia
 kitty
 lib32-mpg123

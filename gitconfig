@@ -18,6 +18,7 @@
 [core]
     autocrlf = input
     editor = nvim
+    attributesfile = "~/.gitattributes_global"
 [diff]
     tool = nvimdiff
 [merge]
@@ -26,3 +27,9 @@
     cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
 [difftool]
     prompt = false
+
+[filter "nbstrip_full"]
+clean = "jq --indent 1 \
+        '(.cells[] | select(has(\"outputs\")) | .outputs) = []  \
+        | (.cells[] | select(has(\"execution_count\")) | .execution_count) = null  \
+        '"
