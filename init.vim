@@ -29,7 +29,7 @@ nnoremap ; :
 let g:python3_host_prog = '/usr/bin/python3'
 let g:python2_host_prog = '/usr/bin/python2'
 " File browsing
-map - :Files<cr>
+map - :NERDTreeToggle<CR>
 " No beeping
 set visualbell noerrorbells
 " Fast scrolling

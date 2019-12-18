@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 set -eu
 
@@ -37,13 +37,13 @@ done
 
 src=( $(awk '{print $1}' "$SCRIPTPATH/mapper") )
 dest=( $(awk '{print $2}' "$SCRIPTPATH/mapper") )
-dir=( $(awk '{print $3}' "$SCRIPTPATH/mapper" | sed '/^$/d') )
+folders=( $(awk '{print $3}' "$SCRIPTPATH/mapper" | sed '/^$/d') )
 
 #############################
 # Create config dirs
 #############################
 
-for i in "$dir"; do
+for i in "${folders[@]}"; do
     mkdir -pv "$(eval echo $i)"
 done
 

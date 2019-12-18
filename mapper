@@ -1,8 +1,8 @@
 init.vim            $HOME/.config/nvim/init.vim                 $HOME/.config/nvim
-dunstrc             $HOME/.config/dunst/dunstrc                 $HOME/.config/dunstrc
+dunstrc             $HOME/.config/dunst/dunstrc                 $HOME/.config/dunst
 config.rasi         $HOME/.config/rofi/config.rasi              $HOME/.config/rofi
 kitty.conf          $HOME/.config/kitty/kitty.conf              $HOME/.config/kitty
-zathurarc           $HOME/.config/zathura/zathurarc             $HOME/.config/zathurarc
+zathurarc           $HOME/.config/zathura/zathurarc             $HOME/.config/zathura
 gitconfig           $HOME/.gitconfig
 zprofile            $HOME/.zprofile
 zshrc               $HOME/.zshrc
