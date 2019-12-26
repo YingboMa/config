@@ -6,9 +6,9 @@
     st = status -sb
     co = checkout
     br = branch
-    cm = commit --verbose -S
-    me = merge -S
-    rb = rebase -S
+    cm = commit --verbose
+    me = merge
+    rb = rebase
     lo = log --all --color --graph --pretty=format:'%Cred%h%Creset\
     -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\
     --abbrev-commit
@@ -27,3 +27,5 @@
     cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
 [difftool]
     prompt = false
+[commit]
+    gpgsign = true

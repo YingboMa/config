@@ -11,6 +11,8 @@ cd "$HOME"
 # Java application
 wmname LG3D
 AWT_TOOLKIT=MToolkit; export AWT_TOOLKIT
+export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
+set _JAVA_AWT_WM_NONREPARENTING=1 in /etc/profile.d/jre.sh
 #xsetroot -solid black
 
 IMAGE="$HOME/Pictures/wallpaper.jpg"

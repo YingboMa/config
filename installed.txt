@@ -54,9 +54,9 @@ fcitx-lilydjwg-git
 fcitx-qt5
 fcitx-rime
 fcitx-sogoupinyin
+fd
 feh
 file-roller
-firefox
 fish
 five-or-more
 flex
@@ -233,6 +233,7 @@ radare2
 ranger
 reiserfsprogs
 ripgrep
+rlwrap
 rofi
 rstudio-desktop-bin
 rsync
@@ -241,6 +242,7 @@ s-nail
 sc-im
 screenfetch
 scrot
+sd
 sfml
 simple-mtpfs
 simple-scan
@@ -271,6 +273,7 @@ tig
 time
 tlp
 tlp-rdw
+tmate
 tmux
 totem
 tracker
@@ -320,7 +323,6 @@ xorg-fonts-100dpi
 xorg-fonts-75dpi
 xorg-iceauth
 xorg-server-devel
-xorg-server-xdmx
 xorg-server-xephyr
 xorg-server-xnest
 xorg-server-xvfb

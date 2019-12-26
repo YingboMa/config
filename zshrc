@@ -1,6 +1,7 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 #PATH=$HOME/local/bin:$HOME/.cargo/bin:$PATH
+source $HOME/.zprofile
 
 # Path to your oh-my-zsh installation.
   export ZSH=$HOME/.oh-my-zsh
@@ -63,10 +64,10 @@ alias jd='cd $HOME/.julia/dev'
 
 # fzf
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse'
-export FZF_DEFAULT_COMMAND='
-  (git ls-tree -r --name-only HEAD ||
-   find . -path "*/\.*" -prune -o -type f -print -o -type l -print |
-      sed s/^..//) 2> /dev/null'
+#export FZF_DEFAULT_COMMAND='
+#  (git ls-tree -r --name-only HEAD ||
+#   find . -path "*/\.*" -prune -o -type f -print -o -type l -print |
+#      sed s/^..//) 2> /dev/null'
 [ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
 [ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
 
@@ -78,9 +79,11 @@ export BROWSER="google-chrome-stable"
 export JULIA_PATH="$HOME/build/julia/usr"
 export LLVM_PATH="$JULIA_PATH/tools"
 #export PATH="$LLVM_PATH:$PATH"
+export JULIA_NUM_THREADS=4
 
 export JL="$JULIA_PATH/bin/julia"
 alias j="$JL -q"
+alias jj="$HOME/bin/julia-1.3.0/bin/julia -q"
 export OPT="$LLVM_PATH/opt"
 
 export OPTFLAGS="-load=$JULIA_PATH/lib/libjulia.so"

@@ -1,5 +1,14 @@
 # Zathura configuration file
 # See man `man zathurarc'
+map r reload
+map p print
+map i recolor
+map J zoom out
+map K zoom in
+map R rotate
+unmap f
+map f toggle_fullscreen
+map [fullscreen] f toggle_fullscreen
 
 # Open document in fit-width mode by default
 set adjust-open "best-fit"
@@ -16,45 +25,46 @@ set scroll-step 100
 set zoom-min 10
 set guioptions ""
 
+set font "FiraCode 15"
+
 # zathurarc-dark
+set notification-error-bg       "#586e75" # base01  # seem not work
+set notification-error-fg       "#dc322f" # red
+set notification-warning-bg     "#586e75" # base01
+set notification-warning-fg     "#dc322f" # red
+set notification-bg             "#586e75" # base01
+set notification-fg             "#b58900" # yellow
 
-set font "inconsolata 15"
-set default-bg "#000000" #00
-set default-fg "#F7F7F6" #01
+set completion-group-bg         "#002b36" # base03
+set completion-group-fg         "#839496" # base0
+set completion-bg               "#073642" # base02
+set completion-fg               "#93a1a1" # base1
+set completion-highlight-bg     "#586e75" # base01
+set completion-highlight-fg     "#eee8d5" # base2
 
-set statusbar-fg "#B0B0B0" #04
-set statusbar-bg "#202020" #01
+# Define the color in index mode
+set index-bg                   "#073642" # base02
+set index-fg                   "#93a1a1" # base1
+set index-active-bg             "#586e75" # base01
+set index-active-fg             "#eee8d5" # base2
 
-set inputbar-bg "#151515" #00 currently not used
-set inputbar-fg "#FFFFFF" #02
+set inputbar-bg                 "#586e75" # base01
+set inputbar-fg                 "#eee8d5" # base2
 
-set notification-error-bg "#AC4142" #08
-set notification-error-fg "#151515" #00
+set statusbar-bg                "#073642" # base02
+set statusbar-fg                "#93a1a1" # base1
 
-set notification-warning-bg "#AC4142" #08
-set notification-warning-fg "#151515" #00
+set highlight-color             "#657b83" # base00  # hightlight match when search keyword(vim's /)
+set highlight-active-color      "#268bd2" # blue
 
-set highlight-color "#F4BF75" #0A
-set highlight-active-color "#6A9FB5" #0D
+set default-bg                  "#073642" # base02
+set default-fg                  "#93a1a1" # base1
+set render-loading              true
+set render-loading-fg           "#073642" # base02
+set render-loading-bg           "#073642" # base02
 
-set completion-highlight-fg "#151515" #02
-set completion-highlight-bg "#90A959" #0C
-
-set completion-bg "#303030" #02
-set completion-fg "#E0E0E0" #0C
-
-set notification-bg "#90A959" #0B
-set notification-fg "#151515" #00
-
-set recolor "true"
-set recolor-lightcolor "#000000" #00
-set recolor-darkcolor "#E0E0E0" #06
-set recolor-reverse-video "true"
-set recolor-keephue "true"
-
-
-set render-loading "false"
-set scroll-step 50
-unmap f
-map f toggle_fullscreen
-map [fullscreen] f toggle_fullscreen
+# Recolor book content's color
+set recolor                     true
+set recolor-lightcolor          "#073642" # base02
+set recolor-darkcolor           "#93a1a1" # base1
+# set recolor-keephue             true      # keep original color
