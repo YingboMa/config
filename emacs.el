@@ -32,5 +32,5 @@ There are two things you can do about this warning:
 (defun mechanics ()
   (interactive)
   (run-scheme 
-    "/usr/bin/mit-scheme --band /usr/lib/mit-scheme-x86-64/mechanics.com"
+    "/usr/local/bin/mit-scheme --band /usr/lib/mit-scheme-x86-64/mechanics.com"
   ))

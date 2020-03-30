@@ -1,4 +1,5 @@
 " Plugins
+" I EDITED THIS
 call plug#begin('~/.vim/plugged')
     " Tmux
     Plug 'christoomey/vim-tmux-navigator'

@@ -1,0 +1,4 @@
+fontawesome.sty
+texlive-moderncv-git
+xorg-server-xdmx
+zoom2
