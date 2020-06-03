@@ -2,5 +2,6 @@ escrotum-git
 geteltorito
 mutt-wizard-git
 slack-desktop
+transset-df
 urlview
-visual-studio-code-insiders
+zoom

@@ -82,8 +82,8 @@ export LLVM_PATH="$JULIA_PATH/tools"
 export JULIA_NUM_THREADS=4
 
 export JL="$JULIA_PATH/bin/julia"
-alias j="$JL -q"
-alias jj="$HOME/bin/julia-1.3.0/bin/julia -q"
+alias jj="$JL -q"
+alias j="$HOME/bin/julia-1.4.0/bin/julia -q"
 export OPT="$LLVM_PATH/opt"
 
 export OPTFLAGS="-load=$JULIA_PATH/lib/libjulia.so"

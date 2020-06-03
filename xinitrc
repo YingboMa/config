@@ -31,7 +31,7 @@ export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 
 xset b 0
-xset r rate 150 70
+xset r rate 150 80
 
 dwmstatus &
 dunst &

@@ -15,6 +15,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'lervag/vimtex'
     Plug 'sirver/ultisnips'
     Plug 'honza/vim-snippets'
+    " Chinese
+    Plug 'lilydjwg/fcitx.vim'
 call plug#end()
 filetype plugin indent on
 " Neovim Setting
@@ -57,6 +59,10 @@ set notimeout
 let maplocalleader = " "
 let mapleader = " "
 set ls=0
+" No copy on delete
+nnoremap <leader>d "_d
+xnoremap <leader>d "_d
+xnoremap <leader>p "_dP
 " Move a line/block up & down by Alt+{j,k}
 nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==
@@ -129,22 +135,23 @@ endif
 set inccommand=split
 "map - :E<CR>
 " Lang
-set conceallevel=0
+set conceallevel=0 " more explicit
 set spelllang=en
 set spellfile=~/.vim/spell/en.utf-8.add
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 nnoremap <F6> :%s/[\u4e00-\u9fff]//gn<CR>
 nnoremap <F7> :setlocal foldmethod=syntax<CR>
-nnoremap <F8> :setlocal spell spelllang=en_us<CR>
+nnoremap <F8> :setlocal spell! spelllang=en_us<CR>
 autocmd BufNewFile,BufRead *.mmark set filetype=markdown
 autocmd BufNewFile,BufRead *.jmd set filetype=markdown
 autocmd BufNewFile,BufRead *.jl nnoremap <leader>B :let @+ = 'breakpoint(' . join(['"' . expand('%:p') . '"',  line(".")], ',') . ')' <CR>
 autocmd BufNewFile,BufRead *.tex,*.bib setlocal ts=2 sw=2
-autocmd FileType gitcommit,markdown,text,html,tex setlocal spell complete+=kspell tw=80
+autocmd FileType gitcommit,markdown,text,html,tex setlocal spell complete+=kspell tw=80 formatoptions+=m " line break for Chinese
 set colorcolumn=80 " and give me a colored column
 " Julia
 let g:default_julia_version = "devel"
 autocmd BufRead,BufNewFile $HOME/.julia/*/*DiffEq*/* setlocal ts=2 sw=2
+autocmd BufRead,BufNewFile $HOME/.julia/*/ArrayInterface/* setlocal ts=2 sw=2
 autocmd BufRead,BufNewFile $HOME/.julia/*/Pumas/* setlocal ts=2 sw=2
 autocmd BufRead,BufNewFile $HOME/.julia/*/DiffEqGPU/* setlocal ts=4 sw=4
 " LaTeX
@@ -166,25 +173,6 @@ inoremap <expr> <C-k> ShowDigraphs()
 map <F11> :w<bar>make!<bar>cclose <CR>
 set list
 set list listchars=tab:▸\ ,trail:·,precedes:←,extends:→
-" Chinese Input
-let g:input_toggle = 1
-function! Fcitx2en()
-    let s:input_status = system("fcitx-remote")
-    if s:input_status == 2
-        let g:input_toggle = 1
-        let l:a = system("fcitx-remote -c")
-    endif
-endfunction
-function! Fcitx2zh()
-    let s:input_status = system("fcitx-remote")
-    if s:input_status != 2 && g:input_toggle == 1
-        let l:a = system("fcitx-remote -o")
-        let g:input_toggle = 0
-    endif
-endfunction
-set timeoutlen=400
-autocmd InsertLeave * call Fcitx2en()
-"autocmd InsertEnter * call Fcitx2zh()
 " Git
 nmap ]h <Plug>(GitGutterNextHunk)
 nmap [h <Plug>(GitGutterPrevHunk)
