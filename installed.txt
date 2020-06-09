@@ -152,7 +152,6 @@ intel-ucode
 jfsutils
 jpegoptim
 kdenlive
-kitty
 klavaro
 latex2html
 ldc
@@ -279,6 +278,7 @@ tlp
 tlp-rdw
 tmate
 tmux
+tokei
 totem
 tracker
 tracker-miners
