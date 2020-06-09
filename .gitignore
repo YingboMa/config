@@ -1,3 +1,4 @@
 *.o
 dwmstatus/dwmstatus
 dwm/dwm
+st/st

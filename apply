@@ -27,8 +27,8 @@ fi
 # Color
 printf "${G}"
 
-declare -a dwms=("dwm" "dwmstatus")
-for i in "${dwms[@]}"
+declare -a builds=("dwm" "dwmstatus" "st")
+for i in "${builds[@]}"
 do
     make clean -C "$i"
     make -C "$i"
