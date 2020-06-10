@@ -1657,7 +1657,8 @@ xximspot(int x, int y)
 	xw.ime.spot.x = borderpx + x * win.cw;
 	xw.ime.spot.y = borderpx + (y + 1) * win.ch;
 
-	XSetICValues(xw.ime.xic, XNPreeditAttributes, xw.ime.spotlist, NULL);
+	// `XSetICValues` often hangs when the input is too rapid
+	// XSetICValues(xw.ime.xic, XNPreeditAttributes, xw.ime.spotlist, NULL);
 }
 
 void

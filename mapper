@@ -9,6 +9,7 @@ tmux.conf           $HOME/.tmux.conf
 tmate.conf          $HOME/.tmate.conf
 latexmkrc           $HOME/.latexmkrc
 xinitrc             $HOME/.xinitrc
+xprofile            $HOME/.xprofile
 clang-format        $HOME/.clang-format
 wakebar             $HOME/.local/bin/wakebar                     $HOME/.local/bin
 gitconvert          $HOME/.local/bin/gitconvert                  $HOME/.local/bin
