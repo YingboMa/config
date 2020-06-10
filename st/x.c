@@ -1357,13 +1357,13 @@ xdrawglyphfontspecs(const XftGlyphFontSpec *specs, Glyph base, int len, int x, i
 	XRectangle r;
 
 	/* Fallback on color display for attributes not supported by the font */
-	if (base.mode & ATTR_ITALIC && base.mode & ATTR_BOLD) {
-		if (dc.ibfont.badslant || dc.ibfont.badweight)
-			base.fg = defaultattr;
-	} else if ((base.mode & ATTR_ITALIC && dc.ifont.badslant) ||
-	    (base.mode & ATTR_BOLD && dc.bfont.badweight)) {
-		base.fg = defaultattr;
-	}
+	//if (base.mode & ATTR_ITALIC && base.mode & ATTR_BOLD) {
+	//	if (dc.ibfont.badslant || dc.ibfont.badweight)
+	//		base.fg = defaultattr;
+	//} else if ((base.mode & ATTR_ITALIC && dc.ifont.badslant) ||
+	//    (base.mode & ATTR_BOLD && dc.bfont.badweight)) {
+	//	base.fg = defaultattr;
+	//}
 
 	if (IS_TRUECOL(base.fg)) {
 		colfg.alpha = 0xffff;
