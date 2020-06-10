@@ -72,6 +72,7 @@ pkgconf
 powertop
 pv
 python-pip
+python-pygments
 python-pynvim
 qq-linux
 ranger

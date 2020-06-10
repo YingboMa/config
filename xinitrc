@@ -2,9 +2,10 @@
 export _JAVA_AWT_WM_NONREPARENTING=1
 
 cd "$HOME"
-source $HOME/.zprofile
+[ -f ~/.xprofile ] && source $HOME/.xprofile
+[ -f ~/.zprofile ] && source $HOME/.zprofile
 
-xrdb -merge ~/.Xresources
+[ -f ~/.Xresources ] && xrdb -merge ~/.Xresources
 
 # Java application
 wmname LG3D
@@ -24,16 +25,12 @@ fi
 
 xautolock -time 10 -locker slock &
 
-export XMODIFIERS=@im=fcitx
-export GTK_IM_MODULE=fcitx
-export QT_IM_MODULE=fcitx
-
 xset b 0
 xset r rate 150 80
 
 dwmstatus &
 dunst &
-fcitx &
+fcitx-autostart &
 parcellite &
 
 while true; do

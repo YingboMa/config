@@ -15,6 +15,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'lervag/vimtex'
     Plug 'sirver/ultisnips'
     Plug 'honza/vim-snippets'
+    " Chinese
+    Plug 'lilydjwg/fcitx.vim'
 call plug#end()
 filetype plugin indent on
 " Neovim Setting
