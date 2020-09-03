@@ -16,16 +16,13 @@ if [ "$backup" == 'y' ]; then
         pacman -Qeq > "$SCRIPTPATH/installed.txt"
     fi
     printf "pacman -Qqm > $SCRIPTPATH/aurinstalled.txt${NC}\n"
-    pacman -Qqm > "$SCRIPTPATH/aurinstalled.txt"
+    (pacman -Qqm > "$SCRIPTPATH/aurinstalled.txt" || true)
 fi
 
 read -p 'Do you want to sync packages? {y/n} ' -i 'n' -e init
 if [ "$init" == 'y' ]; then
     sudo pacman -S --needed - < installed.txt
 fi
-
-# Color
-printf "${G}"
 
 declare -a builds=("dwm" "dwmstatus" "st")
 for i in "${builds[@]}"
@@ -34,6 +31,9 @@ do
     make -C "$i"
     make install -C "$i"
 done
+
+# Oh my zsh
+[ -d "$HOME/.oh-my-zsh" ] || sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 src=( $(awk '{print $1}' "$SCRIPTPATH/mapper") )
 dest=( $(awk '{print $2}' "$SCRIPTPATH/mapper") )
@@ -64,8 +64,6 @@ else
         ln -sv "$SCRIPTPATH/$(eval echo ${src[$i]})" "$DEST"
     done
 fi
-
-printf "${NC}"
 
 NVIMPLUGFILE=~/.local/share/nvim/site/autoload/plug.vim
 if [ ! -e "$NVIMPLUGFILE" ]; then

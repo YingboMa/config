@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Iosevka Term Curly:style=Regular:pixelsize=20:antialias=true:autohint=true";
+static char *font = "Iosevka Term Slab:style=Regular:size=12:antialias=true:autohint=true";
 static int borderpx = 0;
 
 /*

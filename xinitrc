@@ -1,12 +1,10 @@
 #!/bin/sh
-xrandr --setprovideroutputsource modesetting NVIDIA-0
-xrandr --auto
-xrandr --dpi 96
-
 export _JAVA_AWT_WM_NONREPARENTING=1
 
 cd "$HOME"
-# source $HOME/.zprofile
+source $HOME/.zprofile
+
+xrdb -merge ~/.Xresources
 
 # Java application
 wmname LG3D
