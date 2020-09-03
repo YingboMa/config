@@ -1,0 +1,4 @@
+clight
+clightd
+libmodule
+slack-desktop

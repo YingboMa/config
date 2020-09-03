@@ -43,6 +43,7 @@ linux-firmware
 linux-headers
 lvm2
 m4
+maim
 make
 man-db
 man-pages

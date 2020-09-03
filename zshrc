@@ -83,7 +83,7 @@ export JULIA_NUM_THREADS=4
 
 export JL="$JULIA_PATH/bin/julia"
 alias jj="$JL -q"
-alias j="$HOME/bin/julia-1.4.0/bin/julia -q"
+alias j="$HOME/bin/julia-1.5.1/bin/julia -q"
 export OPT="$LLVM_PATH/opt"
 
 export OPTFLAGS="-load=$JULIA_PATH/lib/libjulia.so"
@@ -123,6 +123,8 @@ alias ls='exa'
 alias ll='exa -la --git'
 alias l='exa -lah --git'
 alias dict='cat /usr/share/dict/words | fzf-tmux -l 20% --multi --reverse'
+
+export MATLAB_LOG_DIR=/tmp
 
 if [[ $DISPLAY ]]; then
     if which tmux >/dev/null 2>&1; then

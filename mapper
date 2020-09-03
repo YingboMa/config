@@ -11,4 +11,5 @@ latexmkrc           $HOME/.latexmkrc
 xinitrc             $HOME/.xinitrc
 clang-format        $HOME/.clang-format
 wakebar             $HOME/.local/bin/wakebar                     $HOME/.local/bin
-gitconvert          $HOME/.local/bin/gitconvert                  $HOME/.local/bin
+gitconvert          $HOME/.local/bin/gitconvert
+screenshot          $HOME/.local/bin/screenshot

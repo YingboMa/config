@@ -27,7 +27,5 @@
     cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
 [difftool]
     prompt = false
-[commit]
-    gpgsign = true
 [pull]
     ff = only
