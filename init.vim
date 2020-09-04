@@ -21,12 +21,11 @@ call plug#end()
 filetype plugin indent on
 " Neovim Setting
 " Basic settings
-set number lazyredraw mouse=a so=5
+set number mouse=a so=5
 " Movements
 vmap < <gv
 vmap > >gv
 map <esc> :noh<cr>
-nnoremap ; :
 " Python setup
 let g:python3_host_prog = '/usr/bin/python3'
 let g:python2_host_prog = '/usr/bin/python2'
@@ -35,8 +34,8 @@ map - :NERDTreeToggle<CR>
 " No beeping
 set visualbell noerrorbells
 " Fast scrolling
-"set synmaxcol=128
-syntax sync minlines=128
+set synmaxcol=256
+syntax sync minlines=256
 " encode
 set encoding=utf-8
 set termencoding=utf-8
@@ -70,19 +69,10 @@ inoremap <A-j> <Esc>:m .+1<CR>==gi
 inoremap <A-k> <Esc>:m .-2<CR>==gi
 vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
-" Gotta run fast!
-noremap H ^
-noremap L g_
-noremap J 5j
-noremap K 5k
-" {} is not useful anyway, ƪ(•̃͡ε•̃͡)∫ ƪ(•̃͡ε•̃͡)∫ ƪ(•̃͡ε•̃͡)∫
-nnoremap { J
-nnoremap } K
 " History
 set undofile undodir=~/.vim/undo/ undolevels=1000 undoreload=10000
-" nerdtree
-map <leader>t :NERDTreeToggle<CR>
 " FZF
+nnoremap <leader>t :Files<CR>
 nnoremap <leader>b :Buffers<CR>
 command! -bang -nargs=* GGrep
   \ call fzf#vim#grep(

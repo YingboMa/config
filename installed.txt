@@ -17,6 +17,7 @@ clang
 cloc
 cmake
 cpupower
+dunst
 exa
 fakeroot
 fcitx-configtool
