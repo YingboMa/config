@@ -1,5 +1,4 @@
 [user]
-    signingkey = 49B9999C38409F9B00107BA0360E7B995F549EAF
     email = mayingbo5@gmail.com
     name = Yingbo Ma
 [alias]
@@ -27,7 +26,5 @@
     cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
 [difftool]
     prompt = false
-[commit]
-    gpgsign = true
 [pull]
     ff = only
