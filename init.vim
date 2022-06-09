@@ -11,6 +11,7 @@ call plug#begin('~/.vim/plugged')
     " Theme
     Plug 'morhetz/gruvbox'
     Plug 'lifepillar/vim-solarized8'
+    Plug 'junegunn/goyo.vim'
     " Lang
     Plug 'JuliaEditorSupport/julia-vim', { 'on_ft': 'julia' }
     Plug 'sbdchd/neoformat'
@@ -68,6 +69,7 @@ noremap H ^
 noremap L g_
 " History
 set undofile undodir=~/.vim/undo/ undolevels=1000 undoreload=10000
+set backupdir=~/.vim/bkup
 " FZF
 nnoremap <leader>b :Buffers<CR>
 command! -bang -nargs=* GGrep
@@ -218,3 +220,16 @@ set laststatus=0
 
 " Timestamp notes
 map <F8> :put =strftime('%a %Y-%m-%d %H:%M ')<CR>j
+let yingbo = "Co-authored-by: \"Yingbo Ma\" <mayingbo5@gmail.com>"
+map <F9> exe "normal! a" . yingbo . "\<Esc>"
+
+autocmd BufNewFile,BufRead *.jmd call PresentationMode()
+function PresentationMode()
+    nnoremap <buffer> <Right> :n<CR>
+    nnoremap <buffer> <Left> :N<CR>
+    if !exists('#goyo') "if not already in Goyo
+        Goyo
+    end
+endfunction
+
+runtime macros/matchit.vim

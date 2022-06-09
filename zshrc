@@ -91,3 +91,4 @@ if [[ $DISPLAY ]]; then
         test -z "$TMUX" && (tmux attach || tmux new-session)
     fi
 fi
+export JULIA_NUM_THREADS=8
