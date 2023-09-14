@@ -4,6 +4,8 @@
 *.mp4
 *.gif
 
+.DS_Store
+
 scratch*.jl
 
 *.pb.gz

@@ -18,7 +18,7 @@
 [core]
     autocrlf = input
     editor = nvim
-    excludesfile = /Users/scheme/.gitignore
+    excludesfile = ~/.gitignore
 [diff]
     tool = nvimdiff
 [merge]
