@@ -29,7 +29,6 @@ map <esc> :noh<cr>
 nnoremap ; :
 " Python setup
 let g:python3_host_prog = '/usr/bin/python3'
-let g:python2_host_prog = '/usr/bin/python2'
 " File browsing
 map - :NERDTreeToggle<CR>
 " No beeping
@@ -150,10 +149,7 @@ autocmd FileType gitcommit,markdown,text,html,tex setlocal spell complete+=kspel
 set colorcolumn=80 " and give me a colored column
 " Julia
 let g:default_julia_version = "devel"
-autocmd BufRead,BufNewFile $HOME/.julia/*/*DiffEq*/* setlocal ts=2 sw=2
-autocmd BufRead,BufNewFile $HOME/.julia/*/ArrayInterface/* setlocal ts=2 sw=2
 autocmd BufRead,BufNewFile $HOME/.julia/*/Pumas/* setlocal ts=2 sw=2
-autocmd BufRead,BufNewFile $HOME/.julia/*/DiffEqGPU/* setlocal ts=4 sw=4
 " LaTeX
 let g:tex_flavor='latex'
 let g:vimtex_view_method='zathura'

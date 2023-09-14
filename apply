@@ -7,33 +7,8 @@ NC='\033[0m'
 SCRIPT="$(readlink -f "$0")"
 SCRIPTPATH=`dirname "$SCRIPT"`
 
-read -p 'Do you want to backup packages list? {y/n} ' -i 'y' -e backup
-if [ "$backup" == 'y' ]; then
-    printf "${G}pacman -Qeq | grep -v \"\$(pacman -Qqm)\" > $SCRIPTPATH/installed.txt\n"
-    if [ -n "$(pacman -Qqm)" ]; then
-        pacman -Qeq | grep -v "$(pacman -Qqm)" > "$SCRIPTPATH/installed.txt"
-    else
-        pacman -Qeq > "$SCRIPTPATH/installed.txt"
-    fi
-    printf "pacman -Qqm > $SCRIPTPATH/aurinstalled.txt${NC}\n"
-    pacman -Qqm > "$SCRIPTPATH/aurinstalled.txt"
-fi
-
-read -p 'Do you want to sync packages? {y/n} ' -i 'n' -e init
-if [ "$init" == 'y' ]; then
-    sudo pacman -S --needed - < installed.txt
-fi
-
 # Color
 printf "${G}"
-
-declare -a builds=("dwm" "dwmstatus" "st")
-for i in "${builds[@]}"
-do
-    make clean -C "$i"
-    make -C "$i"
-    make install -C "$i"
-done
 
 src=( $(awk '{print $1}' "$SCRIPTPATH/mapper") )
 dest=( $(awk '{print $2}' "$SCRIPTPATH/mapper") )

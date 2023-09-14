@@ -1,0 +1,13 @@
+*.png
+*.pdf
+*.o
+*.mp4
+*.gif
+
+scratch*.jl
+
+*.pb.gz
+
+*.jl.cov
+*.jl.*.cov
+*.jl.mem
