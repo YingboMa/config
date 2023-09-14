@@ -106,6 +106,27 @@
           ]
         }
       ]
+    },
+    {
+      "description": "Esc to Capslock.",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "escape",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "caps_lock"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
