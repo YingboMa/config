@@ -4,7 +4,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'scrooloose/nerdtree'
     Plug 'airblade/vim-gitgutter'
     Plug 'tpope/vim-fugitive'
-    Plug '/usr/bin/fzf'
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
     " Theme
     Plug 'morhetz/gruvbox'
@@ -72,11 +72,9 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 " Gotta run fast!
 noremap H ^
 noremap L g_
-noremap J 5j
-noremap K 5k
 " {} is not useful anyway, ƪ(•̃͡ε•̃͡)∫ ƪ(•̃͡ε•̃͡)∫ ƪ(•̃͡ε•̃͡)∫
-nnoremap { J
-nnoremap } K
+nnoremap { 5j
+nnoremap } 5k
 " History
 set undofile undodir=~/.vim/undo/ undolevels=1000 undoreload=10000
 " nerdtree
@@ -141,6 +139,7 @@ nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 nnoremap <F6> :%s/[\u4e00-\u9fff]//gn<CR>
 nnoremap <F7> :setlocal foldmethod=syntax<CR>
 nnoremap <F8> :setlocal spell! spelllang=en_us<CR>
+inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 autocmd BufNewFile,BufRead *.mmark set filetype=markdown
 autocmd BufNewFile,BufRead *.jmd set filetype=markdown
 autocmd BufNewFile,BufRead *.jl nnoremap <leader>B :let @+ = 'breakpoint(' . join(['"' . expand('%:p') . '"',  line(".")], ',') . ')' <CR>

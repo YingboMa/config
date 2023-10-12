@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+#export PATH=$HOME/.bin/clang+llvm-17.0.1-arm64-apple-darwin22.0/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -102,3 +102,9 @@ source $ZSH/oh-my-zsh.sh
 alias v="nvim"
 alias j="$HOME/.bin/Julia-1.10.app/Contents/Resources/julia/bin/julia"
 alias wolfram="/Applications/Wolfram\ Engine.app/Contents/MacOS/WolframKernel"
+alias jd="$HOME/src/julia"
+alias nt="$HOME/src/Notes"
+alias htop="zenith"
+export EDITOR='nvim'
+# For VimTex and Zathura
+export DBUS_SESSION_BUS_ADDRESS="unix:path=$DBUS_LAUNCHD_SESSION_BUS_SOCKET"
