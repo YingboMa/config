@@ -6,6 +6,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'tpope/vim-fugitive'
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
+    Plug 'ojroques/vim-oscyank'
     " Theme
     Plug 'morhetz/gruvbox'
     Plug 'lifepillar/vim-solarized8'
@@ -41,6 +42,17 @@ set encoding=utf-8
 set termencoding=utf-8
 set fileencodings=utf-8,gbk,latin1
 " Clipboard
+let g:clipboard = {
+        \   'name': 'osc52',
+        \   'copy': {
+        \     '+': {lines, regtype -> OSCYankString(join(lines, "\n"))},
+        \     '*': {lines, regtype -> OSCYankString(join(lines, "\n"))},
+        \   },
+        \   'paste': {
+        \     '+': {-> [split(getreg(''), '\n'), getregtype('')]},
+        \     '*': {-> [split(getreg(''), '\n'), getregtype('')]},
+        \   },
+        \ }
 set clipboard+=unnamedplus
 set nopaste noshowmode
 filetype on

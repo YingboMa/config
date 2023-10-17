@@ -1,5 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 #export PATH=$HOME/.bin/clang+llvm-17.0.1-arm64-apple-darwin22.0/bin:$PATH
+export PATH=$HOME/.bin/nvim-linux64/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
