@@ -8,9 +8,13 @@
 .DS_Store
 
 scratch*.jl
+scratch*.py
+scratch*.c
+*.dylib
 
 *.pb.gz
 
 *.jl.cov
 *.jl.*.cov
 *.jl.mem
+*.ll

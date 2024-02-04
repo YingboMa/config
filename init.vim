@@ -7,7 +7,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
     " Theme
-    Plug 'morhetz/gruvbox'
     Plug 'lifepillar/vim-solarized8'
     " Lang
     Plug 'JuliaEditorSupport/julia-vim', { 'on_ft': 'julia' }
@@ -77,8 +76,6 @@ nnoremap { 5j
 nnoremap } 5k
 " History
 set undofile undodir=~/.vim/undo/ undolevels=1000 undoreload=10000
-" nerdtree
-map <leader>t :NERDTreeToggle<CR>
 " FZF
 nnoremap <leader>b :Buffers<CR>
 command! -bang -nargs=* GGrep
@@ -89,6 +86,7 @@ nnoremap <leader>gc :Commits<CR>
 nnoremap <leader>gb :BCommits<CR>
 nnoremap <leader>gg :GGrep<CR>
 nnoremap <leader>gf :GFiles<CR>
+nnoremap <leader>ff :Files<CR>
 nnoremap <silent> <leader>ft :Filetypes<CR>
 nmap <leader><tab> <plug>(fzf-maps-n)
 xmap <leader><tab> <plug>(fzf-maps-x)
@@ -98,9 +96,6 @@ imap <c-x><c-f> <plug>(fzf-complete-path)
 imap <c-x><c-j> <plug>(fzf-complete-file-ag)
 imap <c-x><c-l> <plug>(fzf-complete-line)
 imap <c-x><c-x> <plug>(fzf-maps-i)
-" Leader
-nnoremap <leader>s :split<CR>
-nnoremap <leader>v :vsplit<CR>
 " Don't move the cursor
 " Save current view settings on a per-window, per-buffer basis.
 function! AutoSaveWinView()
@@ -151,20 +146,13 @@ let g:default_julia_version = "devel"
 autocmd BufRead,BufNewFile $HOME/.julia/*/Pumas/* setlocal ts=2 sw=2
 " LaTeX
 let g:tex_flavor='latex'
-let g:vimtex_view_method='zathura'
+let g:vimtex_view_method='skim'
 let g:vimtex_quickfix_mode=0
 let g:vimtex_complete_enabled=0
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:UltiSnipsSnippetDirectories = ['~/.vim/UltiSnips', 'UltiSnips']
-" Special characters
-function! ShowDigraphs()
-    digraphs
-    call getchar()
-    return "\<C-k>"
-endfunction
-inoremap <expr> <C-k> ShowDigraphs()
 map <F11> :w<bar>make!<bar>cclose <CR>
 set list
 set list listchars=tab:▸\ ,trail:·,precedes:←,extends:→

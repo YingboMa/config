@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-#export PATH=$HOME/.bin/clang+llvm-17.0.1-arm64-apple-darwin22.0/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -100,11 +100,21 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias v="nvim"
-alias j="$HOME/.bin/Julia-1.10.app/Contents/Resources/julia/bin/julia"
+alias j="$HOME/.bin/julia-1.10.0/bin/julia"
+alias js="j --project=@daemon --startup-file=no -e 'using DaemonMode; serve()'"
+alias jc="j --project=@daemon --startup-file=no -e 'using DaemonMode; runargs()'"
+alias jf="jc $HOME/src/julia/playground/formatter.jl"
+alias jr="jr $HOME/src/julia/playground/repl.jl"
+alias jr="$HOME/.bin/julia-1.9.3/bin/julia"
 alias wolfram="/Applications/Wolfram\ Engine.app/Contents/MacOS/WolframKernel"
 alias jd="$HOME/src/julia"
 alias nt="$HOME/src/Notes"
-alias htop="zenith"
+#alias htop="zenith"
 export EDITOR='nvim'
+export JULIA_NUM_THREADS=8
 # For VimTex and Zathura
 export DBUS_SESSION_BUS_ADDRESS="unix:path=$DBUS_LAUNCHD_SESSION_BUS_SOCKET"
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+export LDFLAGS="-L/opt/homebrew/opt/llvm/lib/c++ -Wl,-rpath,/opt/homebrew/opt/llvm/lib/c++ -L/opt/homebrew/opt/llvm/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
+alias c="cd ${HOME}/src/cpp"

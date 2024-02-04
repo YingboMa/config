@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 REPO_URL=`git remote -v | grep -m1 '^origin' | sed -Ene's#.*(https://[^[:space:]]*).*#\1#p'`
 if [ -z "$REPO_URL" ]; then
   echo "-- ERROR:  Could not identify Repo url."
